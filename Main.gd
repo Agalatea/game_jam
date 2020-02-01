@@ -43,6 +43,7 @@ func _unhandled_input(event):
 				for node in get_tree().get_nodes_in_group("RobotElement"):
 					node.drop()
 					node.input_pickable = false
+				$GameTimer/Timer.stop()
 				$HUD/Win.emit_signal("win")
 
 
@@ -51,5 +52,5 @@ func _on_LevelTimer_timeout():
 	for node in get_tree().get_nodes_in_group("RobotElement"):
 		node.drop()
 		node.input_pickable = false
-		$HUD/GameOver.emit_signal("game_over")
+	$HUD/GameOver.emit_signal("game_over")
 	pass # Replace with function body.

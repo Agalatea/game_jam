@@ -8,27 +8,27 @@
 anchor_top = 0.00175435
 anchor_right = 1.0
 anchor_bottom = 1.00175
-margin_left = 0.902496
-margin_top = 2.23517e-08
-margin_right = 0.902496
-margin_bottom = -9.89437e-06
+margin_left = 284.918
+margin_top = 96.7874
+margin_right = 284.918
+margin_bottom = 96.7874
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 177.709
-margin_top = 326.41
-margin_right = 768.709
-margin_bottom = 436.41
+margin_left = -94.1852
+margin_top = 200.533
+margin_right = 496.815
+margin_bottom = 310.533
 icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 496.762, 177.692 )
-scale = Vector2( 0.541269, 0.541269 )
+position = Vector2( 223.879, 99.7172 )
+scale = Vector2( 0.781823, 0.781823 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

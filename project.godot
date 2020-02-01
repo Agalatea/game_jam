@@ -19,6 +19,18 @@ config/name="gamejam"
 run/main_scene="res://MainScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="res://global.gd"
+BGM="*res://BGM.tscn"
+BackgroundImage="*res://BackgroundImage.tscn"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

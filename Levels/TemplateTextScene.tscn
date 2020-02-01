@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=1]
+[ext_resource path="res://font/QuirkyRobot.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/fix.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_color = Color( 0.858824, 0.827451, 0.0823529, 1 )
+font_data = ExtResource( 2 )
+
+[node name="TextScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+letter_timeout = 0.001
+text_to_show = "We lay. We wait. We cry. We rust. Please, fix us quickly, and we can leave this place. We long to roam free again."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 211.0
+margin_top = 61.0
+margin_right = 844.0
+margin_bottom = 305.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.980392, 0.980392, 0.94902, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_constants/shadow_as_outline = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 423.201
+margin_top = 369.353
+margin_right = 558.201
+margin_bottom = 423.353
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Label.gd" type="Script" id=1]
 [ext_resource path="res://Win.gd" type="Script" id=2]
 [ext_resource path="res://art/win_button.png" type="Texture" id=3]
 [ext_resource path="res://art/gmae_over.png" type="Texture" id=4]
+[ext_resource path="res://HUD.gd" type="Script" id=5]
 
 [node name="HUD" type="Node2D"]
 z_index = 5
+script = ExtResource( 5 )
 
 [node name="GameOver" type="Button" parent="."]
-margin_left = 67.4501
-margin_top = 295.45
-margin_right = 1863.45
-margin_bottom = 596.45
+margin_left = 69.9677
+margin_top = 224.959
+margin_right = 1865.97
+margin_bottom = 525.959
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 4 )
 script = ExtResource( 1 )
@@ -21,10 +23,10 @@ __meta__ = {
 }
 
 [node name="Win" type="Button" parent="."]
-margin_left = 75.0501
-margin_top = 288.8
-margin_right = 1871.05
-margin_bottom = 589.8
+margin_left = 67.4975
+margin_top = 222.394
+margin_right = 1863.5
+margin_bottom = 523.394
 rect_scale = Vector2( 0.5, 0.5 )
 icon = ExtResource( 3 )
 script = ExtResource( 2 )
@@ -33,5 +35,5 @@ __meta__ = {
 }
 [connection signal="game_over" from="GameOver" to="GameOver" method="_on_Label_game_over"]
 [connection signal="pressed" from="GameOver" to="GameOver" method="_on_GameOver_pressed"]
-[connection signal="pressed" from="Win" to="Win" method="_on_Win_pressed"]
+[connection signal="pressed" from="Win" to="." method="_on_Win_pressed"]
 [connection signal="win" from="Win" to="Win" method="_on_Win_win"]

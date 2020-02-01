@@ -5,7 +5,7 @@ signal clicked
 signal snap_it(robo_body, pos)
 signal go_back(robo_body)
 
-export var type = 1
+export var type = ""
 var held = false
 var activeArea=null
 var body=null
@@ -20,12 +20,24 @@ func _ready():
 	body.add_to_group("RobotElement")
 	set_physics_process(true)
 	match (type):
-		1:
-			$AnimatedSprite.play("1")
-		2:
-			$AnimatedSprite.play("2")
-		3:
-			$AnimatedSprite.play("3")
+		"R1LeftHand":
+			$AnimatedSprite.play("R1LeftHand")
+		"R1RightHand":
+			$AnimatedSprite.play("R1RightHand")
+		"R1RightLeg":
+			$AnimatedSprite.play("R1RightLeg")
+		"R1LeftLeg":
+			$AnimatedSprite.play("R1LeftLeg")
+		"R1WrongPart1":
+			$AnimatedSprite.play("R1WrongPart1")
+		"R1WrongPart2":
+			$AnimatedSprite.play("R1WrongPart2")
+		"R1WrongPart3":
+			$AnimatedSprite.play("R1WrongPart3")
+		_:
+			$AnimatedSprite.play("default")
+#		8:
+#			$AnimatedSprite.play("3")
 	pass # Replace with function body.
 
 

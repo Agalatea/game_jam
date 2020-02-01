@@ -23,5 +23,5 @@ func _on_Win_win():
 
 
 func _on_Win_pressed():
-	get_tree().change_scene("res://MainScreen.tscn")
+	
 	pass # Replace with function body.

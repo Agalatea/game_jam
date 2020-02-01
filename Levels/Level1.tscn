@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/ROBOTdobreczesci_lewanogakaciemnosci.png" type="Texture" id=5]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://art/r1body.png" type="Texture" id=7]
+[ext_resource path="res://art/r1head.png" type="Texture" id=8]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 6 )]
+position = Vector2( 843.798, 192.359 )
+z_index = 1
+type = "R1LeftHand"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 582.02, 151.934 )
+z_index = 1
+type = "R1RightHand"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 957.278, 214.446 )
+z_index = 1
+type = "R1LeftLeg"
+
+[node name="Hole" parent="." instance=ExtResource( 2 )]
+position = Vector2( 774.874, 313.735 )
+type = "R1RightHand"
+
+[node name="Hole2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 273.167, 343.229 )
+type = "R1LeftHand"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+position = Vector2( 7.82916, -10.5402 )
+next_scene = "TemplateLevel"
+
+[node name="GameTimer" parent="." instance=ExtResource( 3 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+timer_total = 10
+
+[node name="Hole3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 426.899, 509.116 )
+type = "R1LeftLeg"
+
+[node name="RobotElement4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 72.3139, 422.22 )
+type = "R1WrongPart2"
+
+[node name="RobotElement5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 246.1, 193.615 )
+type = "R1WrongPart3"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 485.523, 101.547 )
+texture = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 509.323, 293.535 )
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 655.297, 525.19 )
+texture = ExtResource( 5 )
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

@@ -6,6 +6,7 @@ extends Control
 # var b = "text"
 export var letter_timeout= .005
 export var text_to_show ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper fermentum ornare. Ut nibh risus, porttitor quis ante ut, suscipit mattis orci. Proin sit amet risus libero. "
+export var next_scene = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Button.hide()
@@ -34,5 +35,5 @@ func _on_Timer_for_next_scene_timeout():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://Levels/"+next_scene+".tscn")
 	pass # Replace with function body.
