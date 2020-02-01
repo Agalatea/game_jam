@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+[ext_resource path="res://Win.gd" type="Script" id=2]
+
+[node name="HUD" type="Node2D"]
+
+[node name="GameOver" type="Label" parent="."]
+margin_left = 466.451
+margin_top = 254.6
+margin_right = 542.451
+margin_bottom = 268.6
+text = "GAME OVER"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Label" parent="."]
+margin_left = 484.501
+margin_top = 138.7
+margin_right = 524.501
+margin_bottom = 152.7
+text = "WIN"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="game_over" from="GameOver" to="GameOver" method="_on_Label_game_over"]
+[connection signal="win" from="Win" to="Win" method="_on_Win_win"]

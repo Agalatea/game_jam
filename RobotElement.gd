@@ -2,22 +2,46 @@ extends RigidBody2D
 
 
 signal clicked
+signal snap_it(robo_body, pos)
+signal go_back(robo_body)
 
+export var type = 1
 var held = false
 var activeArea=null
 var body=null
+var start_pos
+var returning = false
+export var return_speed = 2000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start_pos = position 
 	body=self
 	body.add_to_group("RobotElement")
 	set_physics_process(true)
+	match (type):
+		1:
+			$AnimatedSprite.play("1")
+		2:
+			$AnimatedSprite.play("2")
+		3:
+			$AnimatedSprite.play("3")
 	pass # Replace with function body.
 
 
 func _process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position()
+	if (returning and position != start_pos):
+		print("go back marty")
+#		print (self.get_path_to()get_pos().distance_to(start_pos))
+		var targetVector = (position - start_pos).normalized()
+		print (targetVector)
+		set_linear_velocity(targetVector * return_speed * delta)
+	if (returning and position == start_pos):
+		returning = false
+		gravity_scale = 0
+		input_pickable = true
 
 func _physics_process(delta):
 	if activeArea!=null:
@@ -46,5 +70,22 @@ func _on_RobotElement_input_event(_viewport, event, _shape_idx):
 	
 	pass # Replace with function body.
 
-func setActiveArea(area):
-	activeArea=area
+
+func _on_RobotElement_snap_it(robo_body, pos):
+#	print ("snap sig")
+	if(self.body == robo_body):
+		held=false
+		position = pos
+		sleeping = true
+		input_pickable = false
+		
+	pass # Replace with function body.
+
+
+func _on_RobotElement_go_back(robo_body):
+	if(self.body == robo_body):
+		position = start_pos
+		held = false
+#		gravity_scale = 10
+#		input_pickable = false
+#		returning = true
