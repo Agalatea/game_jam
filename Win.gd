@@ -1,4 +1,4 @@
-extends Label
+extends Button
 
 
 # Declare member variables here. Examples:
@@ -19,4 +19,9 @@ func _ready():
 
 func _on_Win_win():
 	show()
+	pass # Replace with function body.
+
+
+func _on_Win_pressed():
+	get_tree().change_scene("res://MainScreen.tscn")
 	pass # Replace with function body.

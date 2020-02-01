@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/robot kaszel.wav-e5ce65bb162501d7e98b669ccde1414e.sample"
+
+[deps]
+
+source_file="res://sounds/robot kaszel.wav"
+dest_files=[ "res://.import/robot kaszel.wav-e5ce65bb162501d7e98b669ccde1414e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

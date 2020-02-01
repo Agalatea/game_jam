@@ -78,7 +78,7 @@ func _on_RobotElement_snap_it(robo_body, pos):
 		position = pos
 		sleeping = true
 		input_pickable = false
-		
+		$MATCH_SOUND.play()
 	pass # Replace with function body.
 
 
@@ -86,6 +86,7 @@ func _on_RobotElement_go_back(robo_body):
 	if(self.body == robo_body):
 		position = start_pos
 		held = false
+		$GO_BACK_SOUND.play()
 #		gravity_scale = 10
 #		input_pickable = false
 #		returning = true

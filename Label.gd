@@ -1,4 +1,4 @@
-extends Label
+extends Button
 
 
 # Declare member variables here. Examples:
@@ -24,4 +24,9 @@ func _on_Label_game_over():
 
 
 func _on_Win_win():
+	pass # Replace with function body.
+
+
+func _on_GameOver_pressed():
+	get_tree().change_scene("res://MainScreen.tscn")
 	pass # Replace with function body.

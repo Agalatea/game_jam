@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Robot Fix 2 screw out.wav-f2e2a3e184b47f67b05471d4a686c645.sample"
+
+[deps]
+
+source_file="res://sounds/Robot Fix 2 screw out.wav"
+dest_files=[ "res://.import/Robot Fix 2 screw out.wav-f2e2a3e184b47f67b05471d4a686c645.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
