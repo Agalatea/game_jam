@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/r1head.png" type="Texture" id=5]
+[ext_resource path="res://Main.gd" type="Script" id=6]
+[ext_resource path="res://art/r1body.png" type="Texture" id=7]
+[ext_resource path="res://art/ROBOTdobreczesci_prawanogaciemnosci.png" type="Texture" id=8]
+[ext_resource path="res://art/ROBOTdobreczesci_lewarekaciemnosci.png" type="Texture" id=9]
+[ext_resource path="res://art/ROBOTdobreczesci_lewanogakaciemnosci.png" type="Texture" id=10]
+[ext_resource path="res://art/ROBOTdobreczesci_prawarekaciemnosci.png" type="Texture" id=11]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 3 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5, 0 )
+next_scene = "Level3Text"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 508.941, 345.17 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 481.339, 157.568 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 384.208, 600.055 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 630.273, 595.738 )
+texture = ExtResource( 10 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 787.841, 377.732 )
+texture = ExtResource( 9 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 306.503, 399.317 )
+texture = ExtResource( 11 )
+
+[node name="RobotElement1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 943.126, 202.57 )
+type = "R1GoodEar"
+
+[node name="Hole" parent="." instance=ExtResource( 4 )]
+position = Vector2( 608.316, 111.014 )
+type = "R1GoodEar"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 273.015, 436.011 )
+type = "R1GoodEar2"
+
+[node name="Hole2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 440.328, 105.765 )
+type = "R1GoodEar2"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 937.224, 497.633 )
+scale = Vector2( 0.25, 0.25 )
+type = "R1WrongPart2"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

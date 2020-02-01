@@ -42,7 +42,7 @@ autostart = true
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 position = Vector2( 7.82916, -10.5402 )
-next_scene = "TemplateLevel"
+next_scene = "Level2Text"
 
 [node name="GameTimer" parent="." instance=ExtResource( 3 )]
 margin_left = 20.0
@@ -68,7 +68,7 @@ position = Vector2( 485.523, 101.547 )
 texture = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 509.323, 293.535 )
+position = Vector2( 510.323, 293.535 )
 texture = ExtResource( 7 )
 
 [node name="Sprite2" type="Sprite" parent="."]

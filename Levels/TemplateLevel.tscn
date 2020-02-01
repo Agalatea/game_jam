@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/r1head.png" type="Texture" id=4]
+[ext_resource path="res://art/r1body.png" type="Texture" id=5]
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,6 +22,14 @@ margin_bottom = 20.0
 timer_total = 2
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 27.7594, 35.1617 )
 
 [node name="Robot" type="Sprite" parent="."]
+position = Vector2( 506.701, 324.689 )
+texture = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 492.264, 138.796 )
+texture = ExtResource( 4 )
 [connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

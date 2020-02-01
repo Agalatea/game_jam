@@ -34,6 +34,14 @@ func _ready():
 			$AnimatedSprite.play("R1WrongPart2")
 		"R1WrongPart3":
 			$AnimatedSprite.play("R1WrongPart3")
+		"R1GoodEar":
+			$AnimatedSprite.play("R1GoodEar")
+		"R1GoodEar2":
+			$AnimatedSprite.play("R1GoodEar2")
+		"R1GoodHeart":
+			$AnimatedSprite.play("R1GoodHeart")
+		"R1BadHeart1":
+			$AnimatedSprite.play("R1BadHeart1")
 		_:
 			$AnimatedSprite.play("default")
 #		8:

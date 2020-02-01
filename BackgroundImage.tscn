@@ -5,5 +5,5 @@
 [node name="BackgroundImage" type="Sprite"]
 position = Vector2( 504.57, 323.102 )
 scale = Vector2( 0.18, 0.19 )
-z_index = -1
+z_index = -3
 texture = ExtResource( 1 )
