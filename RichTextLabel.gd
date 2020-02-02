@@ -4,11 +4,14 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export(String, "waste", "oldCar", "scrap") var background
+
 export var letter_timeout= .005
 export var text_to_show ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper fermentum ornare. Ut nibh risus, porttitor quis ante ut, suscipit mattis orci. Proin sit amet risus libero. "
 export var next_scene = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("/root/BackgroundImage").set_background(background)
 	$Button.hide()
 	printText(text_to_show)
 	

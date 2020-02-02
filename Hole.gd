@@ -27,7 +27,7 @@ func _on_Hole_body_entered(body):
 #			body.snapper(body, position)
 			taken = true
 			body.emit_signal("snap_it", body, position)
-#		elif taken == false:
-#			body.emit_signal("go_back", body)
+		elif taken == false:
+			body.emit_signal("go_back", body)
 #	body.get_parent().setActiveArea(self)
 

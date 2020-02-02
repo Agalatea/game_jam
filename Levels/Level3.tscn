@@ -16,6 +16,7 @@
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource( 1 )
+background = "oldCar"
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 10.0

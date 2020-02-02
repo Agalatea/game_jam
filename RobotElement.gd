@@ -19,6 +19,7 @@ func _ready():
 	body=self
 	body.add_to_group("RobotElement")
 	set_physics_process(true)
+	z_index = 8
 	match (type):
 		"R1LeftHand":
 			$AnimatedSprite.play("R1LeftHand")
@@ -104,8 +105,8 @@ func _on_RobotElement_snap_it(robo_body, pos):
 
 func _on_RobotElement_go_back(robo_body):
 	if(self.body == robo_body):
-		position = start_pos
-		held = false
+#		position = start_pos
+#		held = false
 		$GO_BACK_SOUND.play()
 #		gravity_scale = 10
 #		input_pickable = false

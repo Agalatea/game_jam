@@ -4,11 +4,13 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export(String, "waste", "oldCar", "scrap") var background
 
 
 var held_object = null
 var no_of_holes = 0 
 func _ready():
+	get_node("/root/BackgroundImage").set_background(background)
 	for node in get_tree().get_nodes_in_group("RobotElement"):
 		node.connect("clicked", self, "_on_pickable_clicked")
 	for node in get_tree().get_nodes_in_group("Holes"):

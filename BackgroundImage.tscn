@@ -1,9 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://art/waste.png" type="Texture" id=1]
+[ext_resource path="res://art/car-old.jpg" type="Texture" id=2]
+[ext_resource path="res://art/scrap.jpg" type="Texture" id=3]
+[ext_resource path="res://BackgroundImage.gd" type="Script" id=4]
 
-[node name="BackgroundImage" type="Sprite"]
-position = Vector2( 504.57, 323.102 )
-scale = Vector2( 0.18, 0.19 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "oldCar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "scrap",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "waste",
+"speed": 5.0
+} ]
+
+[node name="BackgroundImage" type="AnimatedSprite"]
+position = Vector2( 512.009, 327.729 )
 z_index = -3
-texture = ExtResource( 1 )
+frames = SubResource( 1 )
+animation = "waste"
+script = ExtResource( 4 )
