@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/robot3_base.png" type="Texture" id=6]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+background = "scrap"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+timer_total = 7
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+position = Vector2( 27.7594, 35.1617 )
+next_scene = "Level8Text"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 352.999, 396.24 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 4 )]
+position = Vector2( 943.413, 548.557 )
+type = "R3goodhand"
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 127.202, 492.907 )
+type = "R3goodhand"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 755.26, 405.455 )
+type = "R3badhand"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 951.363, 233.203 )
+type = "R1WrongPart3"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

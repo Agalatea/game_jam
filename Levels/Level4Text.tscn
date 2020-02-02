@@ -6,23 +6,20 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
-outline_size = 5
-outline_color = Color( 0.14902, 0.145098, 0.105882, 1 )
+outline_color = Color( 0.858824, 0.827451, 0.0823529, 1 )
 font_data = ExtResource( 2 )
 
 [node name="TextScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.43201
-margin_right = 1.43201
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-background = "scrap"
-letter_timeout = 0.005
-text_to_show = "Thank you! But I still cannot hear the rain..."
-next_scene = "Level2"
+background = "oldCar"
+letter_timeout = 0.001
+text_to_show = "I want to run free!"
+next_scene = "Level4"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 211.0

@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/robot3_handgood.png" type="Texture" id=6]
+[ext_resource path="res://art/robot3_base.png" type="Texture" id=7]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+background = "oldCar"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+timer_total = 10
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+position = Vector2( 27.7594, 35.1617 )
+next_scene = "Level9Text"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 329.149, 390.94 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 102.709, 475.351 )
+texture = ExtResource( 6 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 4 )]
+position = Vector2( 870.548, 193.742 )
+scale = Vector2( 0.75, 0.75 )
+type = "R3goodeye"
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 323.247, 64.4459 )
+scale = Vector2( 0.5, 0.5 )
+type = "R3goodeye"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 729.87, 195.411 )
+scale = Vector2( 0.75, 0.75 )
+type = "R3badeye"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 957.015, 322.345 )
+scale = Vector2( 0.75, 0.75 )
+type = "R3badheart"
+
+[node name="RobotElement4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 798.347, 334.037 )
+scale = Vector2( 0.75, 0.75 )
+type = "R3goodheart"
+
+[node name="Hole2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 379.132, 262.219 )
+scale = Vector2( 0.5, 0.5 )
+type = "R3goodheart"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

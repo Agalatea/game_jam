@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://art/ROBOTdobreczesci_prawanogaciemnosci.png" type="Texture" id=1]
 [ext_resource path="res://RobotElement.gd" type="Script" id=2]
@@ -14,7 +14,25 @@
 [ext_resource path="res://art/ROBOT_dobraczesci_ucho1.png" type="Texture" id=12]
 [ext_resource path="res://art/ROBOTzleczesci_ucho2.png" type="Texture" id=13]
 [ext_resource path="res://art/r1_dobre_serce.png" type="Texture" id=14]
+[ext_resource path="res://art/robot2_lewareka.png" type="Texture" id=15]
 [ext_resource path="res://art/r1_czarne_serce.png" type="Texture" id=16]
+[ext_resource path="res://art/robot2_prawareka.png" type="Texture" id=17]
+[ext_resource path="res://art/robot2_prawanoga.png" type="Texture" id=18]
+[ext_resource path="res://art/robot2_kabelred.png" type="Texture" id=19]
+[ext_resource path="res://art/robot2_kabelyellow.png" type="Texture" id=20]
+[ext_resource path="res://art/robot2klapka.png" type="Texture" id=21]
+[ext_resource path="res://art/robot3_handbad.png" type="Texture" id=22]
+[ext_resource path="res://art/robot3_handgood.png" type="Texture" id=23]
+[ext_resource path="res://art/robot3_eyebad.png" type="Texture" id=24]
+[ext_resource path="res://art/robot3_eyegood.png" type="Texture" id=25]
+[ext_resource path="res://art/Robot3_heartgood.png" type="Texture" id=26]
+[ext_resource path="res://art/robot3_heartbad.png" type="Texture" id=27]
+[ext_resource path="res://art/robot4_leg1good.png" type="Texture" id=28]
+[ext_resource path="res://art/robot4_leg2good.png" type="Texture" id=29]
+[ext_resource path="res://art/robot4_leg1bad.png" type="Texture" id=30]
+[ext_resource path="res://art/robot4_leg2bad.png" type="Texture" id=31]
+[ext_resource path="res://art/robot4_zeby3bad.png" type="Texture" id=32]
+[ext_resource path="res://art/robot4_zeby3good.png" type="Texture" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.2633, 161.759 )
@@ -26,49 +44,59 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "R3goodhand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "R4mouthbad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "R4mouthgood",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "R3badhand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "R4leg2bad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "R3goodheart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "R4leg1bad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "R3badheart",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "R1WrongPart1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "R1RightHand",
+"name": "R1GoodEar2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "R1LeftHand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "R1RightLeg",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "R1WrongPart3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "R1WrongPart2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "R1LeftLeg",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "8",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "R1GoodEar2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
@@ -78,7 +106,32 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "New Anim",
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "R1WrongPart3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "R1LeftLeg",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "R1RightHand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "R1WrongPart2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "R1GoodHeart",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -86,9 +139,64 @@ animations = [ {
 "name": "R1BadHeart1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "R1GoodHeart",
+"name": "R1RightLeg",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "R2Hand1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "R2Leg1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "R2Leg2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "R2Hand2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "R2plate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "R3goodeye",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "R3badeye",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "R4leg2good",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "R4leg1good",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "R2yellow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "R2red",
 "speed": 5.0
 } ]
 
@@ -99,7 +207,7 @@ gravity_scale = 0.0
 contacts_reported = 5
 contact_monitor = true
 script = ExtResource( 2 )
-type = "R1GoodHeart"
+type = "R2yellow"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -107,7 +215,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2.47362, 3.8147e-06 )
 frames = SubResource( 2 )
-animation = "New Anim"
+animation = "R4mouthgood"
 
 [node name="GO_BACK_SOUND" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )

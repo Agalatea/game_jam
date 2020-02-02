@@ -43,6 +43,44 @@ func _ready():
 			$AnimatedSprite.play("R1GoodHeart")
 		"R1BadHeart1":
 			$AnimatedSprite.play("R1BadHeart1")
+		"R2Hand1":
+			$AnimatedSprite.play("R2Hand1")
+		"R2Hand2":
+			$AnimatedSprite.play("R2Hand2")
+		"R2Leg1":
+			$AnimatedSprite.play("R2Leg1")
+		"R2Leg2":
+			$AnimatedSprite.play("R2Leg2")
+		"R2yellow":
+			$AnimatedSprite.play("R2yellow")
+		"R2red":
+			$AnimatedSprite.play("R2red")
+		"R2plate":
+			$AnimatedSprite.play("R2plate")
+		"R3goodhand":
+			$AnimatedSprite.play("R3goodhand")
+		"R3badhand":
+			$AnimatedSprite.play("R3badhand")
+		"R3badeye":
+			$AnimatedSprite.play("R3badeye")
+		"R3goodeye":
+			$AnimatedSprite.play("R3goodeye")
+		"R3goodheart":
+			$AnimatedSprite.play("R3goodheart")
+		"R3badheart":
+			$AnimatedSprite.play("R3badheart")
+		"R4leg1good":
+			$AnimatedSprite.play("R4leg1good")
+		"R4leg2good":
+			$AnimatedSprite.play("R4leg2good")
+		"R4leg1bad":
+			$AnimatedSprite.play("R4leg1bad")
+		"R4leg2bad":
+			$AnimatedSprite.play("R4leg2bad")
+		"R4mouthbad":
+			$AnimatedSprite.play("R4mouthbad")
+		"R4mouthgood":
+			$AnimatedSprite.play("R4mouthgood")
 		_:
 			$AnimatedSprite.play("default")
 #		8:

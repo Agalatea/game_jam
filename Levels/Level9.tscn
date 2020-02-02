@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/robot4_body.png" type="Texture" id=6]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+background = "scrap"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+position = Vector2( 27.7594, 35.1617 )
+next_scene = "Level10Text"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 506.153, 370.124 )
+texture = ExtResource( 6 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 4 )]
+position = Vector2( 47.7007, 185.502 )
+type = "R4leg1good"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 840.061, 333.904 )
+type = "R4leg1bad"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 948.713, 185.502 )
+type = "R4leg2good"
+
+[node name="RobotElement4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 169.602, 318.004 )
+type = "R4leg2bad"
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 598.908, 506.157 )
+scale = Vector2( 0.5, 0.5 )
+type = "R4leg1good"
+
+[node name="Hole2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 421.356, 503.507 )
+scale = Vector2( 0.5, 0.5 )
+type = "R4leg2good"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

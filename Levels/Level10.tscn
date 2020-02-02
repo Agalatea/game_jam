@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/robot4_body.png" type="Texture" id=6]
+[ext_resource path="res://art/robot4_leg1good.png" type="Texture" id=7]
+[ext_resource path="res://art/robot4_leg2good.png" type="Texture" id=8]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+background = "oldCar"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+timer_total = 7
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 27.7594, 35.1617 )
+next_scene = "WIN"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 509.351, 359.139 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 606.216, 501.851 )
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 429.306, 503.507 )
+texture = ExtResource( 8 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 4 )]
+position = Vector2( 76.851, 344.505 )
+type = "R4mouthbad"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 906.312, 188.152 )
+type = "R4mouthgood"
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 524.707, 357.755 )
+scale = Vector2( 0.5, 0.5 )
+type = "R4mouthgood"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]
