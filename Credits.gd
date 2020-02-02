@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,8 +8,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if $"/root/BGM".playing == false:
-		$"/root/BGM".playing = true
 	pass # Replace with function body.
 
 
@@ -19,10 +17,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Levels/Level1Text.tscn")
-	pass # Replace with function body.
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene("res://Credits.tscn")
+	get_tree().change_scene("res://MainScreen.tscn")
 	pass # Replace with function body.

@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MainScreen.gd" type="Script" id=1]
 [ext_resource path="res://art/start_button.png" type="Texture" id=2]
 [ext_resource path="res://art/title.png" type="Texture" id=3]
+[ext_resource path="res://font/QuirkyRobot.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://art/fix.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 170
+outline_size = 5
+outline_color = Color( 0.14902, 0.145098, 0.105882, 1 )
+font_data = ExtResource( 4 )
 
 [node name="MainScreen" type="Control"]
 anchor_top = 0.00175435
@@ -28,7 +36,28 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 223.879, 99.7172 )
 scale = Vector2( 0.781823, 0.781823 )
 texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -184.0
+margin_top = 68.4474
+margin_right = 643.0
+margin_bottom = 189.447
+custom_fonts/normal_font = SubResource( 1 )
+text = "ROBOTFIXERS"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 98.1841
+margin_top = 344.903
+margin_right = 303.184
+margin_bottom = 454.903
+icon = ExtResource( 5 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
