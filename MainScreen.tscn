@@ -4,7 +4,7 @@
 [ext_resource path="res://art/start_button.png" type="Texture" id=2]
 [ext_resource path="res://art/title.png" type="Texture" id=3]
 [ext_resource path="res://font/QuirkyRobot.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://art/fix.png" type="Texture" id=5]
+[ext_resource path="res://art/CREDITS.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 170
@@ -54,10 +54,10 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 98.1841
-margin_top = 344.903
-margin_right = 303.184
-margin_bottom = 454.903
+margin_left = 3.24739
+margin_top = 346.661
+margin_right = 430.247
+margin_bottom = 456.661
 icon = ExtResource( 5 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

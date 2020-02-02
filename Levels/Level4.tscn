@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://GameTimer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/robot2_cialo.png" type="Texture" id=4]
+[ext_resource path="res://Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RobotElement.tscn" type="PackedScene" id=6]
+
+[node name="TemplateLevel" type="Node2D"]
+script = ExtResource( 1 )
+background = "oldCar"
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GameTimer" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+timer_total = 10
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+position = Vector2( 27.7594, 35.1617 )
+next_scene = "Level5Text"
+
+[node name="Robot" type="Sprite" parent="."]
+position = Vector2( 506.701, 324.689 )
+texture = ExtResource( 4 )
+
+[node name="RobotElement" parent="." instance=ExtResource( 6 )]
+position = Vector2( 127.76, 368.176 )
+scale = Vector2( 0.5, 0.5 )
+type = "R2Hand1"
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 401.292, 299.995 )
+rotation = 0.649262
+scale = Vector2( 0.5, 0.5 )
+type = "R2Hand1"
+
+[node name="RobotElement2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 243.502, 151.945 )
+scale = Vector2( 0.5, 0.5 )
+type = "R2Hand2"
+
+[node name="Hole2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 622.303, 321.281 )
+rotation = 2.65639
+scale = Vector2( 0.5, 0.5 )
+type = "R2Hand2"
+
+[node name="RobotElement3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 770.233, 149.957 )
+scale = Vector2( 0.5, 0.5 )
+type = "R2Leg1"
+
+[node name="Hole3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 463.503, 449.871 )
+rotation = 0.261799
+scale = Vector2( 0.5, 0.5 )
+type = "R2Leg1"
+
+[node name="RobotElement4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 767.848, 470.779 )
+rotation = -3.84845
+scale = Vector2( 0.5, 0.5 )
+type = "R2Leg2"
+
+[node name="Hole4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 584.068, 422.945 )
+rotation = -0.649262
+scale = Vector2( 0.5, 0.5 )
+type = "R2Leg2"
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

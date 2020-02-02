@@ -16,7 +16,7 @@
 
 [node name="TemplateLevel" type="Node2D"]
 script = ExtResource( 1 )
-background = "oldCar"
+background = "waste"
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -32,6 +32,7 @@ timer_total = 10
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1, 3 )
+next_scene = "Level4Text"
 
 [node name="Robot" type="Sprite" parent="."]
 position = Vector2( 524, 160 )
@@ -68,6 +69,7 @@ texture = ExtResource( 13 )
 [node name="RobotElement" parent="." instance=ExtResource( 4 )]
 position = Vector2( 932.793, 236.428 )
 scale = Vector2( 4, 4 )
+type = "R1GoodHeart"
 
 [node name="Hole" parent="." instance=ExtResource( 5 )]
 position = Vector2( 623.366, 303.481 )

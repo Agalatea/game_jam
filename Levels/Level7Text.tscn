@@ -13,16 +13,14 @@ font_data = ExtResource( 2 )
 [node name="TextScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.43201
-margin_right = 1.43201
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "scrap"
-letter_timeout = 0.005
-text_to_show = "Thank you! But I still cannot hear the rain..."
-next_scene = "Level2"
+letter_timeout = 0.001
+text_to_show = "I think I am to broken to be fixed."
+next_scene = "Level7"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 211.0

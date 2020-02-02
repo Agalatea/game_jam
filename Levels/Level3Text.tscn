@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-letter_timeout = 0.002
+letter_timeout = 0.005
 text_to_show = "Thank you! Can you find any controls?"
 next_scene = "Level3"
 
