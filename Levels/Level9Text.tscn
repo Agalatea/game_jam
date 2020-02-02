@@ -18,7 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "oldCar"
-letter_timeout = 0.005
 text_to_show = "Splendid! Can you fix my friend? They look scary but they are nice."
 next_scene = "Level9"
 

@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"/root/BackgroundImage".set_background("waste")
 	if $"/root/BGM".playing == false:
 		$"/root/BGM".playing = true
 	pass # Replace with function body.

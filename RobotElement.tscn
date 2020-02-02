@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://art/ROBOTdobreczesci_prawanogaciemnosci.png" type="Texture" id=1]
 [ext_resource path="res://RobotElement.gd" type="Script" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://art/robot4_leg2bad.png" type="Texture" id=31]
 [ext_resource path="res://art/robot4_zeby3bad.png" type="Texture" id=32]
 [ext_resource path="res://art/robot4_zeby3good.png" type="Texture" id=33]
+[ext_resource path="res://art/spark_particle2.png" type="Texture" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.2633, 161.759 )
@@ -44,24 +45,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "R3goodhand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "R4mouthbad",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "R4mouthgood",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "R3badhand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ) ],
@@ -79,29 +65,29 @@ animations = [ {
 "name": "R4leg1bad",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "R3badhand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "R4mouthbad",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "R3badheart",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "R1WrongPart1",
+"name": "R3goodhand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "R1GoodEar2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "R1LeftHand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "R1GoodEar",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -119,11 +105,6 @@ animations = [ {
 "name": "R1LeftLeg",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "R1RightHand",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "R1WrongPart2",
@@ -134,19 +115,24 @@ animations = [ {
 "name": "R1GoodHeart",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "R1WrongPart1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "R1BadHeart1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "R1RightLeg",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "R2Hand1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "R1GoodEar",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ) ],
@@ -164,9 +150,19 @@ animations = [ {
 "name": "R2Hand2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "R1RightLeg",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "R2plate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "R1RightHand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -177,6 +173,11 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "R3badeye",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "R1LeftHand",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -200,6 +201,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.792157, 0.690196, 0.12549, 0.835294, 1, 1, 1, 1 )
+
 [node name="RobotElement" type="RigidBody2D"]
 input_pickable = true
 mode = 3
@@ -222,6 +226,23 @@ stream = ExtResource( 5 )
 
 [node name="MATCH_SOUND" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+emitting = false
+amount = 16
+lifetime = 2.0
+one_shot = true
+preprocess = 0.2
+speed_scale = 2.86
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource( 34 )
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 104.0
+gravity = Vector2( 0, 0 )
+color_ramp = SubResource( 3 )
 [connection signal="go_back" from="." to="." method="_on_RobotElement_go_back"]
 [connection signal="input_event" from="." to="." method="_on_RobotElement_input_event"]
 [connection signal="snap_it" from="." to="." method="_on_RobotElement_snap_it"]

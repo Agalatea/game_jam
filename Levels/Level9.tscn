@@ -31,12 +31,12 @@ position = Vector2( 506.153, 370.124 )
 texture = ExtResource( 6 )
 
 [node name="RobotElement" parent="." instance=ExtResource( 4 )]
-position = Vector2( 47.7007, 185.502 )
-type = "R4leg1good"
+position = Vector2( 66.7408, 306.089 )
+type = "R4leg1bad"
 
 [node name="RobotElement2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 840.061, 333.904 )
-type = "R4leg1bad"
+type = "R4leg1good"
 
 [node name="RobotElement3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 948.713, 185.502 )

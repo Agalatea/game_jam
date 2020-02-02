@@ -18,7 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "scrap"
-letter_timeout = 0.001
 text_to_show = "I think I am to broken to be fixed."
 next_scene = "Level7"
 

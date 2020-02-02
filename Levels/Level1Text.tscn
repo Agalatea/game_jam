@@ -18,7 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "waste"
-letter_timeout = 0.005
 text_to_show = "We lay. We wait. We cry. We rust. Please, fix us quickly, and we can leave this place. We long to roam free again."
 next_scene = "Level1"
 

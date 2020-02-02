@@ -138,6 +138,8 @@ func _on_RobotElement_snap_it(robo_body, pos):
 		sleeping = true
 		input_pickable = false
 		$MATCH_SOUND.play()
+		$CPUParticles2D.visible=true
+		$CPUParticles2D.restart()
 	pass # Replace with function body.
 
 

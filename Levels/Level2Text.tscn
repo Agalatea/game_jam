@@ -20,7 +20,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "scrap"
-letter_timeout = 0.005
 text_to_show = "Thank you! But I still cannot hear the rain..."
 next_scene = "Level2"
 

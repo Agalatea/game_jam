@@ -26,9 +26,8 @@ margin_bottom = 20.0
 timer_total = 7
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 27.7594, 35.1617 )
-next_scene = "WIN"
+next_scene = "../Credits"
 
 [node name="Robot" type="Sprite" parent="."]
 position = Vector2( 509.351, 359.139 )

@@ -18,7 +18,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "oldCar"
-letter_timeout = 0.005
 text_to_show = "Can they taste the rain?"
 next_scene = "Level10"
 

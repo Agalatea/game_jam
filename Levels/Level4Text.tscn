@@ -17,7 +17,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 background = "oldCar"
-letter_timeout = 0.001
+letter_timeout = 0.005
 text_to_show = "I want to run free!"
 next_scene = "Level4"
 

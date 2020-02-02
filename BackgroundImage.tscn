@@ -24,7 +24,8 @@ animations = [ {
 } ]
 
 [node name="BackgroundImage" type="AnimatedSprite"]
-position = Vector2( 513.27, 312.425 )
+position = Vector2( 506.875, 317.052 )
+scale = Vector2( 1.03819, 1.03819 )
 z_index = -3
 frames = SubResource( 1 )
 animation = "waste"
